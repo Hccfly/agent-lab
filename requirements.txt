@@ -1,0 +1,6 @@
+openai>=2.0.0
+python-dotenv>=1.0.0
+numpy>=1.26
+fastapi>=0.141
+uvicorn>=0.52
+httpx>=0.28  # 仅供 tests/test_server.py(TestClient)使用
