@@ -7,7 +7,17 @@ import ast
 import datetime
 import json
 import operator
-from pathlib import Path
+
+from dotenv import load_dotenv
+
+load_dotenv(override=True)
+
+from governance import (
+    ExecutionGovernor,
+    env_positive_float,
+    env_positive_int,
+    resolve_allowed_read_path,
+)
 
 def _tool(name: str, description: str, properties: dict, required: list[str] | None = None) -> dict:
     """构造 Chat Completions 格式的工具定义。
@@ -107,15 +117,15 @@ MAX_FILE_CHARS = 4000
 
 
 def read_file(path: str) -> str:
-    p = Path(path)
+    p = resolve_allowed_read_path(path)
     if not p.is_file():
         return f"文件不存在或不是文件: {path}"
     # 限制读取长度,防止工具返回超长内容刷爆模型上下文(token 成本问题)。
     return p.read_text(encoding="utf-8", errors="replace")[:MAX_FILE_CHARS]
 
 
-def run_tool(name: str, arguments: dict) -> str:
-    """工具分发器:把模型的调用意图路由到具体实现。"""
+def _run_tool_unlimited(name: str, arguments: dict) -> str:
+    """不带治理的实际工具分发，仅供受限执行器内部调用。"""
     if name == "get_current_time":
         return get_current_time()
     if name == "calculator":
@@ -123,6 +133,21 @@ def run_tool(name: str, arguments: dict) -> str:
     if name == "read_file":
         return read_file(arguments["path"])
     return f"未知工具: {name}"
+
+
+TOOL_GOVERNOR = ExecutionGovernor(
+    max_concurrency=env_positive_int("AGENT_TOOL_MAX_CONCURRENCY", 4),
+    timeout_seconds=env_positive_float("AGENT_TOOL_TIMEOUT_SECONDS", 10.0),
+    queue_timeout_seconds=env_positive_float("AGENT_TOOL_QUEUE_TIMEOUT_SECONDS", 0.25),
+)
+
+
+def run_tool(name: str, arguments: dict) -> str:
+    """统一工具入口：路径策略在工具内，并发与超时策略包住所有工具。"""
+    return TOOL_GOVERNOR.run(
+        f"tool:{name}",
+        lambda: _run_tool_unlimited(name, arguments),
+    )
 
 
 # 幂等工具:同参数重复调用结果相同、无副作用,允许在 agent 循环内做结果去重。

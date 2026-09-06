@@ -12,6 +12,23 @@ import memory
 from agent import run_agent
 
 
+class StubStore:
+    def __init__(self, _path):
+        self.items = []
+
+    def search(self, _query, top_k=3):
+        return []
+
+    def add(self, text, vector):
+        self.items.append((text, vector))
+
+    def save(self):
+        pass
+
+    def __len__(self):
+        return len(self.items)
+
+
 class FakeToolCall:
     def __init__(self, name, arguments, call_id="call_1"):
         self.id = call_id
@@ -64,7 +81,9 @@ assert st["summary"] == "摘要A" and len(st["messages"]) == 1
 print("OK  会话存取 round-trip")
 
 # --- 测试 2:循环 + 持久化 ---
-with patch.object(agent.client.chat.completions, "create", fake_create):
+with patch.object(agent.client.chat.completions, "create", fake_create), \
+     patch.object(agent, "VectorStore", StubStore), \
+     patch.object(agent, "embed_texts", side_effect=lambda texts: [[1.0] for _ in texts]):
     out = run_agent("现在几点", session_id=sid)
 assert out == "当前时间测试值"
 st = memory.load_session(sid)
@@ -76,7 +95,9 @@ print("OK  循环与持久化,历史 roles:", roles)
 # --- 测试 3:压缩 ---
 agent.SUMMARY_THRESHOLD = 4
 agent.KEEP_RECENT = 2
-with patch.object(agent.client.chat.completions, "create", fake_create):
+with patch.object(agent.client.chat.completions, "create", fake_create), \
+     patch.object(agent, "VectorStore", StubStore), \
+     patch.object(agent, "embed_texts", side_effect=lambda texts: [[1.0] for _ in texts]):
     out = run_agent("再问一次", session_id=sid)
 st = memory.load_session(sid)
 assert st["summary"], "应当生成摘要"

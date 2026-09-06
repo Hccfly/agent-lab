@@ -1,0 +1,3295 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-06T12:58:07.463253+00:00",
+  "mode": "offline",
+  "repeats": 3,
+  "runs": [
+    {
+      "case_id": "dialogue",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "你好",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 1.1400000657886267,
+      "model_calls": 1,
+      "tool_requests": 0,
+      "tool_executions": 0,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.2291801,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.2292166
+        }
+      ],
+      "tool_trace": [],
+      "repeat": 1
+    },
+    {
+      "case_id": "dialogue",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "你好",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 36.01770009845495,
+      "model_calls": 1,
+      "tool_requests": 0,
+      "tool_executions": 0,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.2650364,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.2650653
+        }
+      ],
+      "tool_trace": [],
+      "repeat": 1
+    },
+    {
+      "case_id": "arithmetic",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 2.158300019800663,
+      "model_calls": 2,
+      "tool_requests": 1,
+      "tool_executions": 1,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.266873,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.2669361
+        },
+        {
+          "start": 813887.2682682,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.2682934
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.2673329,
+          "ok": true,
+          "end": 813887.2681441
+        }
+      ],
+      "repeat": 1
+    },
+    {
+      "case_id": "arithmetic",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 30.26810009032488,
+      "model_calls": 2,
+      "tool_requests": 1,
+      "tool_executions": 1,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.2951167,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.295172
+        },
+        {
+          "start": 813887.2979121,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.2979406
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.2963499,
+          "ok": true,
+          "end": 813887.2967134
+        }
+      ],
+      "repeat": 1
+    },
+    {
+      "case_id": "dedup",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 1.8581000622361898,
+      "model_calls": 2,
+      "tool_requests": 2,
+      "tool_executions": 1,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.2995567,
+          "tool_requests": [
+            "calculator",
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.2996472
+        },
+        {
+          "start": 813887.3006504,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.300683
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.3001073,
+          "ok": true,
+          "end": 813887.3003941
+        }
+      ],
+      "repeat": 1
+    },
+    {
+      "case_id": "dedup",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 28.450599987991154,
+      "model_calls": 2,
+      "tool_requests": 2,
+      "tool_executions": 1,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.3263291,
+          "tool_requests": [
+            "calculator",
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.3263779
+        },
+        {
+          "start": 813887.3285189,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.3285412
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.327316,
+          "ok": true,
+          "end": 813887.3275437
+        }
+      ],
+      "repeat": 1
+    },
+    {
+      "case_id": "tool_retry",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 1.6736999386921525,
+      "model_calls": 3,
+      "tool_requests": 2,
+      "tool_executions": 2,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.3302346,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.3302842
+        },
+        {
+          "start": 813887.3307596,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.3308001
+        },
+        {
+          "start": 813887.3311622,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.3311826
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.3306699,
+          "ok": false,
+          "error": "RuntimeError",
+          "end": 813887.3306832
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.3308745,
+          "ok": true,
+          "end": 813887.331093
+        }
+      ],
+      "repeat": 1
+    },
+    {
+      "case_id": "tool_retry",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 29.538000002503395,
+      "model_calls": 3,
+      "tool_requests": 2,
+      "tool_executions": 2,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.3558898,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.3559361
+        },
+        {
+          "start": 813887.3577289,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.3577715
+        },
+        {
+          "start": 813887.3600233,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.3600457
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.3569614,
+          "ok": false,
+          "error": "RuntimeError",
+          "end": 813887.3569729
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.3588364,
+          "ok": true,
+          "end": 813887.3590329
+        }
+      ],
+      "repeat": 1
+    },
+    {
+      "case_id": "tool_timeout",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 1.832399982959032,
+      "model_calls": 3,
+      "tool_requests": 2,
+      "tool_executions": 2,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.3617233,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.3618078
+        },
+        {
+          "start": 813887.3623163,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.3623597
+        },
+        {
+          "start": 813887.3627759,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.3628007
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.3622058,
+          "ok": false,
+          "error": "ExecutionTimeout",
+          "end": 813887.3622249
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.3624408,
+          "ok": true,
+          "end": 813887.3626833
+        }
+      ],
+      "repeat": 1
+    },
+    {
+      "case_id": "tool_timeout",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 30.139199923723936,
+      "model_calls": 3,
+      "tool_requests": 2,
+      "tool_executions": 2,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.3875677,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.3876159
+        },
+        {
+          "start": 813887.3897668,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.3898
+        },
+        {
+          "start": 813887.3924045,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.3924275
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.3888065,
+          "ok": false,
+          "error": "ExecutionTimeout",
+          "end": 813887.3888177
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.3911777,
+          "ok": true,
+          "end": 813887.3914561
+        }
+      ],
+      "repeat": 1
+    },
+    {
+      "case_id": "loop_limit",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "达到最大迭代次数(3)仍未结束,已强制停止。",
+      "stop_reason": "max_iterations",
+      "error": null,
+      "latency_ms": 1.2889999197795987,
+      "model_calls": 3,
+      "tool_requests": 3,
+      "tool_executions": 3,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.3938963,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.3939459
+        },
+        {
+          "start": 813887.3943256,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.3943557
+        },
+        {
+          "start": 813887.3944704,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.3944936
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813887.3942621,
+          "ok": true,
+          "end": 813887.394267
+        },
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813887.3944208,
+          "ok": true,
+          "end": 813887.3944239
+        },
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813887.3945424,
+          "ok": true,
+          "end": 813887.3945448
+        }
+      ],
+      "repeat": 1
+    },
+    {
+      "case_id": "loop_limit",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "达到最大迭代次数(3)仍未结束,已强制停止。",
+      "stop_reason": "max_iterations",
+      "error": null,
+      "latency_ms": 29.436100041493773,
+      "model_calls": 3,
+      "tool_requests": 3,
+      "tool_executions": 3,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.4183837,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.4184272
+        },
+        {
+          "start": 813887.4203657,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.4204012
+        },
+        {
+          "start": 813887.4221436,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.4221744
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813887.4194702,
+          "ok": true,
+          "end": 813887.4194753
+        },
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813887.4213242,
+          "ok": true,
+          "end": 813887.4213286
+        },
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813887.4229725,
+          "ok": true,
+          "end": 813887.4229759
+        }
+      ],
+      "repeat": 1
+    },
+    {
+      "case_id": "model_error",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "",
+      "stop_reason": "error",
+      "error": "RuntimeError",
+      "latency_ms": 0.5813000025227666,
+      "model_calls": 1,
+      "tool_requests": 0,
+      "tool_executions": 0,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.4248396,
+          "tool_requests": [],
+          "usage": null,
+          "error": "RuntimeError",
+          "end": 813887.4248596
+        }
+      ],
+      "tool_trace": [],
+      "repeat": 1
+    },
+    {
+      "case_id": "model_error",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "",
+      "stop_reason": "error",
+      "error": "RuntimeError",
+      "latency_ms": 22.613300010561943,
+      "model_calls": 1,
+      "tool_requests": 0,
+      "tool_executions": 0,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.4473987,
+          "tool_requests": [],
+          "usage": null,
+          "error": "RuntimeError",
+          "end": 813887.4474193
+        }
+      ],
+      "tool_trace": [],
+      "repeat": 1
+    },
+    {
+      "case_id": "multi_diamond",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "multi",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "60，56，总和 116",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 6.121199927292764,
+      "model_calls": 8,
+      "tool_requests": 3,
+      "tool_executions": 3,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.4484978,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.4485782
+        },
+        {
+          "start": 813887.4502567,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.4505186
+        },
+        {
+          "start": 813887.4514996,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.451568
+        },
+        {
+          "start": 813887.4522135,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.4522368
+        },
+        {
+          "start": 813887.4526303,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.4526486
+        },
+        {
+          "start": 813887.4532071,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.4532691
+        },
+        {
+          "start": 813887.4536521,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.4536723
+        },
+        {
+          "start": 813887.4537748,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.4537907
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "12*5"
+          },
+          "start": 813887.4508743,
+          "ok": true,
+          "end": 813887.452129
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "7*8"
+          },
+          "start": 813887.4516739,
+          "ok": true,
+          "end": 813887.4525645
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "60+56"
+          },
+          "start": 813887.4533486,
+          "ok": true,
+          "end": 813887.4535848
+        }
+      ],
+      "repeat": 1
+    },
+    {
+      "case_id": "multi_diamond",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "multi",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "60，56，总和 116",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 165.38739996030927,
+      "model_calls": 8,
+      "tool_requests": 3,
+      "tool_executions": 3,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.586346,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.5863962
+        },
+        {
+          "start": 813887.5973351,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.5974126
+        },
+        {
+          "start": 813887.6033948,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.6034396
+        },
+        {
+          "start": 813887.6057035,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.605719
+        },
+        {
+          "start": 813887.6080544,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.6080692
+        },
+        {
+          "start": 813887.6145829,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.6146306
+        },
+        {
+          "start": 813887.6162636,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.6162783
+        },
+        {
+          "start": 813887.6187253,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.6187387
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "12*5"
+          },
+          "start": 813887.598675,
+          "ok": true,
+          "end": 813887.6049261
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "7*8"
+          },
+          "start": 813887.6041941,
+          "ok": true,
+          "end": 813887.6073031
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "60+56"
+          },
+          "start": 813887.6153091,
+          "ok": true,
+          "end": 813887.6154806
+        }
+      ],
+      "repeat": 1
+    },
+    {
+      "case_id": "dialogue",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "你好",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 18.56899994891137,
+      "model_calls": 1,
+      "tool_requests": 0,
+      "tool_executions": 0,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.6374682,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.6374821
+        }
+      ],
+      "tool_trace": [],
+      "repeat": 2
+    },
+    {
+      "case_id": "dialogue",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "你好",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 1.108699943870306,
+      "model_calls": 1,
+      "tool_requests": 0,
+      "tool_executions": 0,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.6389339,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.6389649
+        }
+      ],
+      "tool_trace": [],
+      "repeat": 2
+    },
+    {
+      "case_id": "arithmetic",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 21.316200029104948,
+      "model_calls": 2,
+      "tool_requests": 1,
+      "tool_executions": 1,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.6583229,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.6583571
+        },
+        {
+          "start": 813887.6603207,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.660336
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.6594031,
+          "ok": true,
+          "end": 813887.6595771
+        }
+      ],
+      "repeat": 2
+    },
+    {
+      "case_id": "arithmetic",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 1.2558000162243843,
+      "model_calls": 2,
+      "tool_requests": 1,
+      "tool_executions": 1,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.6615484,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.6615913
+        },
+        {
+          "start": 813887.6621145,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.6621327
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.6618763,
+          "ok": true,
+          "end": 813887.6620501
+        }
+      ],
+      "repeat": 2
+    },
+    {
+      "case_id": "dedup",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 21.479699993506074,
+      "model_calls": 2,
+      "tool_requests": 2,
+      "tool_executions": 1,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.6809487,
+          "tool_requests": [
+            "calculator",
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.6809908
+        },
+        {
+          "start": 813887.6829303,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.6829468
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.6816772,
+          "ok": true,
+          "end": 813887.6818526
+        }
+      ],
+      "repeat": 2
+    },
+    {
+      "case_id": "dedup",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 1.8700999207794666,
+      "model_calls": 2,
+      "tool_requests": 2,
+      "tool_executions": 1,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.684665,
+          "tool_requests": [
+            "calculator",
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.684731
+        },
+        {
+          "start": 813887.6856917,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.6857343
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.6851512,
+          "ok": true,
+          "end": 813887.6854011
+        }
+      ],
+      "repeat": 2
+    },
+    {
+      "case_id": "tool_retry",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 23.910499992780387,
+      "model_calls": 3,
+      "tool_requests": 2,
+      "tool_executions": 2,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.7061403,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.706192
+        },
+        {
+          "start": 813887.7076237,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.7076536
+        },
+        {
+          "start": 813887.7093629,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.7093789
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.7069757,
+          "ok": false,
+          "error": "RuntimeError",
+          "end": 813887.7069834
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.7082641,
+          "ok": true,
+          "end": 813887.708441
+        }
+      ],
+      "repeat": 2
+    },
+    {
+      "case_id": "tool_retry",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 1.4072000049054623,
+      "model_calls": 3,
+      "tool_requests": 2,
+      "tool_executions": 2,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.7106383,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.7106783
+        },
+        {
+          "start": 813887.7110096,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.7110346
+        },
+        {
+          "start": 813887.7113326,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.7113507
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.7109462,
+          "ok": false,
+          "error": "RuntimeError",
+          "end": 813887.7109534
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.7110806,
+          "ok": true,
+          "end": 813887.7112683
+        }
+      ],
+      "repeat": 2
+    },
+    {
+      "case_id": "tool_timeout",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 23.872400051914155,
+      "model_calls": 3,
+      "tool_requests": 2,
+      "tool_executions": 2,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.7311186,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.7311559
+        },
+        {
+          "start": 813887.7330857,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.733119
+        },
+        {
+          "start": 813887.7348934,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.7349089
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.7321837,
+          "ok": false,
+          "error": "ExecutionTimeout",
+          "end": 813887.7321954
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.7339838,
+          "ok": true,
+          "end": 813887.7341573
+        }
+      ],
+      "repeat": 2
+    },
+    {
+      "case_id": "tool_timeout",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 1.4421000378206372,
+      "model_calls": 3,
+      "tool_requests": 2,
+      "tool_executions": 2,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.7361468,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.736197
+        },
+        {
+          "start": 813887.7365723,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.7365991
+        },
+        {
+          "start": 813887.7368797,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.7368977
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.7365126,
+          "ok": false,
+          "error": "ExecutionTimeout",
+          "end": 813887.7365202
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.7366462,
+          "ok": true,
+          "end": 813887.7368163
+        }
+      ],
+      "repeat": 2
+    },
+    {
+      "case_id": "loop_limit",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "达到最大迭代次数(3)仍未结束,已强制停止。",
+      "stop_reason": "max_iterations",
+      "error": null,
+      "latency_ms": 24.93369998410344,
+      "model_calls": 3,
+      "tool_requests": 3,
+      "tool_executions": 3,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.7578855,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.7579151
+        },
+        {
+          "start": 813887.7593309,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.7593576
+        },
+        {
+          "start": 813887.7605299,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.7605516
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813887.7585801,
+          "ok": true,
+          "end": 813887.7585835
+        },
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813887.7599708,
+          "ok": true,
+          "end": 813887.7599737
+        },
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813887.7611404,
+          "ok": true,
+          "end": 813887.7611433
+        }
+      ],
+      "repeat": 2
+    },
+    {
+      "case_id": "loop_limit",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "达到最大迭代次数(3)仍未结束,已强制停止。",
+      "stop_reason": "max_iterations",
+      "error": null,
+      "latency_ms": 1.3171000173315406,
+      "model_calls": 3,
+      "tool_requests": 3,
+      "tool_executions": 3,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.7628331,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.762901
+        },
+        {
+          "start": 813887.7632416,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.7632664
+        },
+        {
+          "start": 813887.7633372,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.7633548
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813887.7631904,
+          "ok": true,
+          "end": 813887.7631941
+        },
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813887.7633025,
+          "ok": true,
+          "end": 813887.7633048
+        },
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813887.7633853,
+          "ok": true,
+          "end": 813887.7633873
+        }
+      ],
+      "repeat": 2
+    },
+    {
+      "case_id": "model_error",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "",
+      "stop_reason": "error",
+      "error": "RuntimeError",
+      "latency_ms": 18.199399928562343,
+      "model_calls": 1,
+      "tool_requests": 0,
+      "tool_executions": 0,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.7816276,
+          "tool_requests": [],
+          "usage": null,
+          "error": "RuntimeError",
+          "end": 813887.7816397
+        }
+      ],
+      "tool_trace": [],
+      "repeat": 2
+    },
+    {
+      "case_id": "model_error",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "",
+      "stop_reason": "error",
+      "error": "RuntimeError",
+      "latency_ms": 0.5893999477848411,
+      "model_calls": 1,
+      "tool_requests": 0,
+      "tool_executions": 0,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.7823922,
+          "tool_requests": [],
+          "usage": null,
+          "error": "RuntimeError",
+          "end": 813887.7824107
+        }
+      ],
+      "tool_trace": [],
+      "repeat": 2
+    },
+    {
+      "case_id": "multi_diamond",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "multi",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "60，56，总和 116",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 136.58050005324185,
+      "model_calls": 8,
+      "tool_requests": 3,
+      "tool_executions": 3,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.8904928,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.8905373
+        },
+        {
+          "start": 813887.8976214,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.8976691
+        },
+        {
+          "start": 813887.9031646,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.903207
+        },
+        {
+          "start": 813887.9053672,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.9053909
+        },
+        {
+          "start": 813887.9078697,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.9078862
+        },
+        {
+          "start": 813887.9140888,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.9141367
+        },
+        {
+          "start": 813887.9158951,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.9159102
+        },
+        {
+          "start": 813887.9183753,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.9183889
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "12*5"
+          },
+          "start": 813887.8984199,
+          "ok": true,
+          "end": 813887.9043241
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "7*8"
+          },
+          "start": 813887.9038677,
+          "ok": true,
+          "end": 813887.9068826
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "60+56"
+          },
+          "start": 813887.9148603,
+          "ok": true,
+          "end": 813887.9150927
+        }
+      ],
+      "repeat": 2
+    },
+    {
+      "case_id": "multi_diamond",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "multi",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "60，56，总和 116",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 5.020700045861304,
+      "model_calls": 8,
+      "tool_requests": 3,
+      "tool_executions": 3,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.9198567,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.9199031
+        },
+        {
+          "start": 813887.9208815,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.9209301
+        },
+        {
+          "start": 813887.9217903,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.9218568
+        },
+        {
+          "start": 813887.9225452,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.922574
+        },
+        {
+          "start": 813887.9228707,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.9229072
+        },
+        {
+          "start": 813887.9236081,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.9236589
+        },
+        {
+          "start": 813887.9240231,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.9240473
+        },
+        {
+          "start": 813887.9241729,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.9241886
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "12*5"
+          },
+          "start": 813887.9211995,
+          "ok": true,
+          "end": 813887.922725
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "7*8"
+          },
+          "start": 813887.9219376,
+          "ok": true,
+          "end": 813887.9224345
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "60+56"
+          },
+          "start": 813887.9237229,
+          "ok": true,
+          "end": 813887.9239401
+        }
+      ],
+      "repeat": 2
+    },
+    {
+      "case_id": "dialogue",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "你好",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 0.891899922862649,
+      "model_calls": 1,
+      "tool_requests": 0,
+      "tool_executions": 0,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.9250909,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.9251119
+        }
+      ],
+      "tool_trace": [],
+      "repeat": 3
+    },
+    {
+      "case_id": "dialogue",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "你好",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 24.654699955135584,
+      "model_calls": 1,
+      "tool_requests": 0,
+      "tool_executions": 0,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.9492593,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.9492855
+        }
+      ],
+      "tool_trace": [],
+      "repeat": 3
+    },
+    {
+      "case_id": "arithmetic",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 1.6666000010445714,
+      "model_calls": 2,
+      "tool_requests": 1,
+      "tool_executions": 1,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.9510236,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.9510822
+        },
+        {
+          "start": 813887.9518785,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.9519037
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.9515105,
+          "ok": true,
+          "end": 813887.9517799
+        }
+      ],
+      "repeat": 3
+    },
+    {
+      "case_id": "arithmetic",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 24.358200025744736,
+      "model_calls": 2,
+      "tool_requests": 1,
+      "tool_executions": 1,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.9740104,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.9740476
+        },
+        {
+          "start": 813887.9758425,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.9758692
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.97478,
+          "ok": true,
+          "end": 813887.9749865
+        }
+      ],
+      "repeat": 3
+    },
+    {
+      "case_id": "dedup",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 1.3713000807911158,
+      "model_calls": 2,
+      "tool_requests": 2,
+      "tool_executions": 1,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.977211,
+          "tool_requests": [
+            "calculator",
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.9772698
+        },
+        {
+          "start": 813887.9779226,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.9779407
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.9775945,
+          "ok": true,
+          "end": 813887.9777806
+        }
+      ],
+      "repeat": 3
+    },
+    {
+      "case_id": "dedup",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 21.21969999279827,
+      "model_calls": 2,
+      "tool_requests": 2,
+      "tool_executions": 1,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813887.9970677,
+          "tool_requests": [
+            "calculator",
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813887.9971102
+        },
+        {
+          "start": 813887.9988165,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813887.9988321
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813887.9978816,
+          "ok": true,
+          "end": 813887.9980519
+        }
+      ],
+      "repeat": 3
+    },
+    {
+      "case_id": "tool_retry",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 1.5306000132113695,
+      "model_calls": 3,
+      "tool_requests": 2,
+      "tool_executions": 2,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813888.0001492,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.0001988
+        },
+        {
+          "start": 813888.0005051,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.0005296
+        },
+        {
+          "start": 813888.000846,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813888.0008748
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813888.0004467,
+          "ok": false,
+          "error": "RuntimeError",
+          "end": 813888.0004542
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813888.0005753,
+          "ok": true,
+          "end": 813888.0007473
+        }
+      ],
+      "repeat": 3
+    },
+    {
+      "case_id": "tool_retry",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 25.41100000962615,
+      "model_calls": 3,
+      "tool_requests": 2,
+      "tool_executions": 2,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813888.0211606,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.0211942
+        },
+        {
+          "start": 813888.0231363,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.0231795
+        },
+        {
+          "start": 813888.0256183,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813888.0256419
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813888.0220561,
+          "ok": false,
+          "error": "RuntimeError",
+          "end": 813888.0220675
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813888.0241599,
+          "ok": true,
+          "end": 813888.02435
+        }
+      ],
+      "repeat": 3
+    },
+    {
+      "case_id": "tool_timeout",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 1.7182000447064638,
+      "model_calls": 3,
+      "tool_requests": 2,
+      "tool_executions": 2,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813888.0274473,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.0275083
+        },
+        {
+          "start": 813888.027989,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.0280217
+        },
+        {
+          "start": 813888.0283688,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813888.0283858
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813888.0279124,
+          "ok": false,
+          "error": "ExecutionTimeout",
+          "end": 813888.0279236
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813888.0281339,
+          "ok": true,
+          "end": 813888.0283103
+        }
+      ],
+      "repeat": 3
+    },
+    {
+      "case_id": "tool_timeout",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "6731",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 27.349499985575676,
+      "model_calls": 3,
+      "tool_requests": 2,
+      "tool_executions": 2,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813888.0510768,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.0511362
+        },
+        {
+          "start": 813888.0532655,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.0533225
+        },
+        {
+          "start": 813888.055087,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813888.0551134
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813888.0522589,
+          "ok": false,
+          "error": "ExecutionTimeout",
+          "end": 813888.0522714
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "127*53"
+          },
+          "start": 813888.0540814,
+          "ok": true,
+          "end": 813888.0542731
+        }
+      ],
+      "repeat": 3
+    },
+    {
+      "case_id": "loop_limit",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "达到最大迭代次数(3)仍未结束,已强制停止。",
+      "stop_reason": "max_iterations",
+      "error": null,
+      "latency_ms": 1.3513999292626977,
+      "model_calls": 3,
+      "tool_requests": 3,
+      "tool_executions": 3,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813888.0567116,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.0567514
+        },
+        {
+          "start": 813888.0571406,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.0571711
+        },
+        {
+          "start": 813888.0572757,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.0572993
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813888.057074,
+          "ok": true,
+          "end": 813888.0570787
+        },
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813888.0572238,
+          "ok": true,
+          "end": 813888.0572269
+        },
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813888.0573464,
+          "ok": true,
+          "end": 813888.0573488
+        }
+      ],
+      "repeat": 3
+    },
+    {
+      "case_id": "loop_limit",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "达到最大迭代次数(3)仍未结束,已强制停止。",
+      "stop_reason": "max_iterations",
+      "error": null,
+      "latency_ms": 26.22130000963807,
+      "model_calls": 3,
+      "tool_requests": 3,
+      "tool_executions": 3,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813888.0773048,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.0773409
+        },
+        {
+          "start": 813888.079243,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.0792774
+        },
+        {
+          "start": 813888.0817997,
+          "tool_requests": [
+            "get_current_time"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.0818369
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813888.0783496,
+          "ok": true,
+          "end": 813888.0783534
+        },
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813888.0804201,
+          "ok": true,
+          "end": 813888.0804247
+        },
+        {
+          "name": "get_current_time",
+          "arguments": {},
+          "start": 813888.0827383,
+          "ok": true,
+          "end": 813888.0827418
+        }
+      ],
+      "repeat": 3
+    },
+    {
+      "case_id": "model_error",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "",
+      "stop_reason": "error",
+      "error": "RuntimeError",
+      "latency_ms": 0.6312999175861478,
+      "model_calls": 1,
+      "tool_requests": 0,
+      "tool_executions": 0,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813888.0844546,
+          "tool_requests": [],
+          "usage": null,
+          "error": "RuntimeError",
+          "end": 813888.0844809
+        }
+      ],
+      "tool_trace": [],
+      "repeat": 3
+    },
+    {
+      "case_id": "model_error",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "single",
+      "category": "fault",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "",
+      "stop_reason": "error",
+      "error": "RuntimeError",
+      "latency_ms": 21.023700013756752,
+      "model_calls": 1,
+      "tool_requests": 0,
+      "tool_executions": 0,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813888.1054932,
+          "tool_requests": [],
+          "usage": null,
+          "error": "RuntimeError",
+          "end": 813888.1055104
+        }
+      ],
+      "tool_trace": [],
+      "repeat": 3
+    },
+    {
+      "case_id": "multi_diamond",
+      "engine": "v1",
+      "mode": "offline",
+      "kind": "multi",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "60，56，总和 116",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 5.156699917279184,
+      "model_calls": 8,
+      "tool_requests": 3,
+      "tool_executions": 3,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813888.1064769,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813888.1065434
+        },
+        {
+          "start": 813888.107601,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.1076651
+        },
+        {
+          "start": 813888.1086508,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.1087035
+        },
+        {
+          "start": 813888.1093475,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813888.1093726
+        },
+        {
+          "start": 813888.1096574,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813888.1096755
+        },
+        {
+          "start": 813888.110305,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.1103708
+        },
+        {
+          "start": 813888.110725,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813888.1107425
+        },
+        {
+          "start": 813888.1108251,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813888.1108439
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "12*5"
+          },
+          "start": 813888.1080624,
+          "ok": true,
+          "end": 813888.1092488
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "7*8"
+          },
+          "start": 813888.1087718,
+          "ok": true,
+          "end": 813888.1095862
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "60+56"
+          },
+          "start": 813888.1104448,
+          "ok": true,
+          "end": 813888.1106609
+        }
+      ],
+      "repeat": 3
+    },
+    {
+      "case_id": "multi_diamond",
+      "engine": "v2",
+      "mode": "offline",
+      "kind": "multi",
+      "category": "business",
+      "passed": true,
+      "trajectory_ok": true,
+      "reasons": [],
+      "answer": "60，56，总和 116",
+      "stop_reason": "completed",
+      "error": null,
+      "latency_ms": 142.57190003991127,
+      "model_calls": 8,
+      "tool_requests": 3,
+      "tool_executions": 3,
+      "tokens": {
+        "prompt_tokens": null,
+        "completion_tokens": null,
+        "total_tokens": null
+      },
+      "usage_coverage": 0.0,
+      "model_trace": [
+        {
+          "start": 813888.2242507,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813888.224296
+        },
+        {
+          "start": 813888.2324834,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.2325467
+        },
+        {
+          "start": 813888.2366409,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.2366841
+        },
+        {
+          "start": 813888.2385629,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813888.2385784
+        },
+        {
+          "start": 813888.2411255,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813888.2411402
+        },
+        {
+          "start": 813888.2480665,
+          "tool_requests": [
+            "calculator"
+          ],
+          "usage": null,
+          "error": null,
+          "end": 813888.2481092
+        },
+        {
+          "start": 813888.2499702,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813888.2499903
+        },
+        {
+          "start": 813888.2528993,
+          "tool_requests": [],
+          "usage": null,
+          "error": null,
+          "end": 813888.2529122
+        }
+      ],
+      "tool_trace": [
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "12*5"
+          },
+          "start": 813888.2332666,
+          "ok": true,
+          "end": 813888.2377598
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "7*8"
+          },
+          "start": 813888.2373798,
+          "ok": true,
+          "end": 813888.2402726
+        },
+        {
+          "name": "calculator",
+          "arguments": {
+            "expression": "60+56"
+          },
+          "start": 813888.248818,
+          "ok": true,
+          "end": 813888.2489917
+        }
+      ],
+      "repeat": 3
+    }
+  ],
+  "summary": {
+    "v1": {
+      "runs": 24,
+      "expectation_pass_rate": 1.0,
+      "task_success_rate": 1.0,
+      "trajectory_pass_rate": 1.0,
+      "latency_median_ms": 1.4246500213630497,
+      "latency_p95_ms": 5.156699917279184,
+      "model_calls": 69,
+      "tool_requests": 39,
+      "tool_executions": 36,
+      "total_tokens": null
+    },
+    "v2": {
+      "runs": 24,
+      "expectation_pass_rate": 1.0,
+      "task_success_rate": 1.0,
+      "trajectory_pass_rate": 1.0,
+      "latency_median_ms": 25.172349996864796,
+      "latency_p95_ms": 142.57190003991127,
+      "model_calls": 69,
+      "tool_requests": 39,
+      "tool_executions": 36,
+      "total_tokens": null
+    }
+  },
+  "recovery": {
+    "v1": {
+      "completed": true,
+      "recovered_without_replay": false,
+      "initial_boundary_verified": true,
+      "duplicate_executions": 2,
+      "phases": [
+        {
+          "pid": 35692,
+          "completed": false
+        },
+        {
+          "pid": 67824,
+          "completed": true
+        }
+      ],
+      "tool_ledger": [
+        {
+          "expression": "12*5",
+          "pid": 35692,
+          "phase": "start"
+        },
+        {
+          "expression": "7*8",
+          "pid": 35692,
+          "phase": "start"
+        },
+        {
+          "expression": "7*8",
+          "pid": 67824,
+          "phase": "resume"
+        },
+        {
+          "expression": "12*5",
+          "pid": 67824,
+          "phase": "resume"
+        },
+        {
+          "expression": "60+56",
+          "pid": 67824,
+          "phase": "resume"
+        }
+      ]
+    },
+    "v2": {
+      "completed": true,
+      "recovered_without_replay": true,
+      "initial_boundary_verified": true,
+      "duplicate_executions": 0,
+      "phases": [
+        {
+          "pid": 37800,
+          "completed": false
+        },
+        {
+          "pid": 41820,
+          "completed": true
+        }
+      ],
+      "tool_ledger": [
+        {
+          "expression": "12*5",
+          "pid": 37800,
+          "phase": "start"
+        },
+        {
+          "expression": "7*8",
+          "pid": 37800,
+          "phase": "start"
+        },
+        {
+          "expression": "60+56",
+          "pid": 41820,
+          "phase": "resume"
+        }
+      ]
+    }
+  },
+  "versions": {
+    "langgraph": "1.2.11",
+    "langgraph-checkpoint-sqlite": "3.1.1",
+    "openai": "3.6.0"
+  },
+  "environment": {
+    "python": "3.14.6",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "model": "ScenarioClient (no API)",
+    "max_iterations": 3,
+    "max_tasks": 3,
+    "v1_max_parallel": 4,
+    "v2_max_concurrency": 4,
+    "model_request_timeout": 30.0
+  },
+  "cases": [
+    {
+      "id": "dialogue",
+      "mode": "single",
+      "goal": "不要调用工具，只回复：你好。",
+      "answer": "你好",
+      "expressions": [],
+      "live": true
+    },
+    {
+      "id": "arithmetic",
+      "mode": "single",
+      "goal": "请用 calculator 计算 127*53，只回复结果。",
+      "answer": "6731",
+      "expressions": [
+        "127*53"
+      ],
+      "live": true
+    },
+    {
+      "id": "dedup",
+      "mode": "single",
+      "goal": "同一轮两次调用 calculator 计算 127*53，最后回复结果。",
+      "answer": "6731",
+      "expressions": [
+        "127*53"
+      ],
+      "requested": 2
+    },
+    {
+      "id": "tool_retry",
+      "mode": "single",
+      "goal": "用 calculator 计算 127*53，临时失败则重试一次。",
+      "answer": "6731",
+      "expressions": [
+        "127*53",
+        "127*53"
+      ],
+      "fault": "temporary"
+    },
+    {
+      "id": "tool_timeout",
+      "mode": "single",
+      "goal": "用 calculator 计算 127*53，超时则重试一次。",
+      "answer": "6731",
+      "expressions": [
+        "127*53",
+        "127*53"
+      ],
+      "fault": "timeout"
+    },
+    {
+      "id": "loop_limit",
+      "mode": "single",
+      "goal": "持续查询当前时间。",
+      "answer": "最大迭代次数",
+      "expressions": [
+        null,
+        null,
+        null
+      ],
+      "expected_stop": "max_iterations"
+    },
+    {
+      "id": "model_error",
+      "mode": "single",
+      "goal": "你好",
+      "answer": "",
+      "expressions": [],
+      "expected_stop": "error"
+    },
+    {
+      "id": "multi_diamond",
+      "mode": "multi",
+      "goal": "拆成三个子任务：先分别用 calculator 计算 12*5 和 7*8，最后根据这两个结果用 calculator 计算两者之和。返回所有结果。",
+      "answer": "116",
+      "expressions": [
+        "12*5",
+        "7*8",
+        "60+56"
+      ],
+      "live": true
+    }
+  ],
+  "source_sha256": {
+    "agent.py": "319e2c678f2ee571fcce662fa073fcfbb483b97c7c27466ff176425dbd82646f",
+    "multiagent.py": "f1f4624226d36e2674ef3477654149dd634801a3545751f11e5c83c6a3eb1e98",
+    "langgraph_agent.py": "f180996fa99cccde4ca4bd0c08556fe5fa14a7079d618815e48db2081f9835b3",
+    "langgraph_multiagent.py": "050a75c19470a85b2eeb15f866c2962c41ccd498aabd5f6439eb833762b8cb6e",
+    "checkpointing.py": "7d0431f17cf81657003097daa6f89ca987634d674883fd6c4d947b8960596286",
+    "tools.py": "c73d9b7f8eb9364316934665305a8a68c852c32d646c9b9b8a3889969d76c849",
+    "governance.py": "9a1adccae5b376f422b9001cd46be9a83e90b059223f008eecc1a4baa1332000",
+    "eval_compare.py": "0e7c05f3c619bd6a03d52dbdc25956800bbc4e74df76f9154ab086236ec44663",
+    "eval_scenarios.py": "f93d828addf189748c5c5b89e37db4251391cb82e713eaa1b2159b075e13fa30",
+    "eval_recovery.py": "24da307f44207f78355a0ee2b47575cb4f4d06279db412c53522c58649151516"
+  }
+}

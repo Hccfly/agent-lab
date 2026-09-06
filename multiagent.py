@@ -348,6 +348,7 @@ def run_multiagent(
         resp = agent.client.chat.completions.create(
             model=agent.MODEL,
             messages=planner_msgs,
+            timeout=agent.MODEL_TIMEOUT_SECONDS,
         )
         planner_text = resp.choices[0].message.content or ""
         planner_msgs.append({"role": "assistant", "content": planner_text})

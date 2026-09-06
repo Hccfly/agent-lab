@@ -4,7 +4,9 @@ __pycache__/
 *.pyc
 sessions/
 logs/
+checkpoints/
+reports/latest-trace.json
+reports/latest-trace.md
 
 # 外层源码目录里嵌套的远程 clone(agent-lab/agent-lab),避免误当成子模块
 /agent-lab/
-
