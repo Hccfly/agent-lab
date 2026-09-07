@@ -42,6 +42,9 @@ class StubStore:
     def save(self):
         pass
 
+    def __len__(self):
+        return len(self.added)
+
 
 class FakeMessage:
     def __init__(self, content=None):
@@ -66,6 +69,7 @@ def fake_create(**kwargs):
 sid = "rag-test-1"
 store = StubStore("unused")
 with patch("agent.VectorStore", lambda p: store), \
+     patch("agent.embed_texts", side_effect=lambda texts: [[1.0] for _ in texts]), \
      patch.object(agent.client.chat.completions, "create", fake_create):
     out = run_agent("我叫什么名字?", session_id=sid)
 

@@ -23,17 +23,18 @@ from types import SimpleNamespace
 from dotenv import load_dotenv
 from openai import OpenAI
 
+# 必须在读取超时/并发配置的本地模块导入前加载 .env，避免配置依赖导入顺序。
+load_dotenv(override=True)
+
 import memory
 from log import log_event
 from rag import VectorStore, embed_texts
 from tools import IDEMPOTENT_TOOLS, TOOLS, run_tool, tool_key
-
-# override=True:让 .env 里的配置(如代理)优先于系统环境变量,
-# 避免你系统里残留一个失效的 HTTPS_PROXY 干扰。
-load_dotenv(override=True)
+from governance import env_positive_float
 
 client = OpenAI()  # 自动读取环境变量 OPENAI_API_KEY / OPENAI_BASE_URL
 MODEL = os.getenv("OPENAI_MODEL", "deepseek-v4-flash")
+MODEL_TIMEOUT_SECONDS = env_positive_float("AGENT_MODEL_TIMEOUT_SECONDS", 30.0)
 
 SYSTEM_PROMPT = """你是一个能调用工具的小助手。
 判断用户的问题是否需要工具:
@@ -133,6 +134,7 @@ def _stream_model(messages: list[dict], on_delta=None, on_reasoning=None, tools:
         tools=TOOLS if tools is None else tools,
         stream=True,
         stream_options={"include_usage": True},
+        timeout=MODEL_TIMEOUT_SECONDS,
     )
     content_parts: list[str] = []
     reasoning_parts: list[str] = []
@@ -197,6 +199,7 @@ def _compress(part: list[dict], prev_summary: str) -> str:
     resp = client.chat.completions.create(
         model=MODEL,
         messages=[{"role": "user", "content": prompt}],
+        timeout=MODEL_TIMEOUT_SECONDS,
     )
     return (resp.choices[0].message.content or "").strip()
 
@@ -240,6 +243,31 @@ def run_agent(
     tools: list | None = None,
     system_prompt: str | None = None,
 ) -> str:
+    """校验会话标识，并将同一 session 的完整读改写事务串行化。"""
+    if session_id is None:
+        return _run_agent_unlocked(
+            user_input, None, max_iterations, stream, on_delta,
+            show_reasoning, on_reasoning, tools, system_prompt,
+        )
+    normalized = memory.validate_session_id(session_id)
+    with memory.session_lock(normalized):
+        return _run_agent_unlocked(
+            user_input, normalized, max_iterations, stream, on_delta,
+            show_reasoning, on_reasoning, tools, system_prompt,
+        )
+
+
+def _run_agent_unlocked(
+    user_input: str,
+    session_id: str | None = None,
+    max_iterations: int = 10,
+    stream: bool = False,
+    on_delta=None,
+    show_reasoning: bool = False,
+    on_reasoning=None,
+    tools: list | None = None,
+    system_prompt: str | None = None,
+) -> str:
     """核心循环。
 
     stream=True 时,模型输出逐字回调 on_delta(关注点分离:流式是
@@ -261,7 +289,7 @@ def run_agent(
     store = None
     related = []
     if session_id:
-        store = VectorStore(f"sessions/{session_id}_vec.json")
+        store = VectorStore(str(memory.SESSION_DIR / f"{session_id}_vec.json"))
         try:
             hits = store.search(user_input, top_k=3)
             related = [h["text"] for h in hits]
@@ -302,7 +330,10 @@ def run_agent(
             )
         else:
             response = client.chat.completions.create(
-                model=MODEL, messages=messages, tools=effective_tools
+                model=MODEL,
+                messages=messages,
+                tools=effective_tools,
+                timeout=MODEL_TIMEOUT_SECONDS,
             )
             message = response.choices[0].message
             usage = getattr(response, "usage", None)

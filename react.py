@@ -21,13 +21,15 @@ import re
 from dotenv import load_dotenv
 from openai import OpenAI
 
+load_dotenv(override=True)
+
 from log import log_event
 from tools import IDEMPOTENT_TOOLS, run_tool, tool_key
-
-load_dotenv(override=True)
+from governance import env_positive_float
 
 client = OpenAI()  # 复用 agent.py 同一套环境变量
 MODEL = os.getenv("OPENAI_MODEL", "deepseek-v4-flash")
+MODEL_TIMEOUT_SECONDS = env_positive_float("AGENT_MODEL_TIMEOUT_SECONDS", 30.0)
 
 REACT_SYSTEM = """你是一个使用 ReAct(Reasoning + Acting)模式的助手。处理问题时遵循这个循环:
 
@@ -61,6 +63,7 @@ def _call_model(messages: list[dict], stream: bool, on_delta=None) -> str:
             messages=messages,
             stream=True,
             stream_options={"include_usage": True},
+            timeout=MODEL_TIMEOUT_SECONDS,
         )
         parts: list[str] = []
         usage = None
@@ -78,7 +81,11 @@ def _call_model(messages: list[dict], stream: bool, on_delta=None) -> str:
             log_event("llm_call", f"[llm] 本轮 tokens={usage.total_tokens}", tokens=usage.total_tokens)
         return "".join(parts)
 
-    resp = client.chat.completions.create(model=MODEL, messages=messages)
+    resp = client.chat.completions.create(
+        model=MODEL,
+        messages=messages,
+        timeout=MODEL_TIMEOUT_SECONDS,
+    )
     text = resp.choices[0].message.content or ""
     usage = getattr(resp, "usage", None)
     if usage is not None:
@@ -160,7 +167,10 @@ def run_react(
                     tool=name, dedup=True, step=step,
                 )
             else:
-                result = run_tool(name, args)
+                try:
+                    result = run_tool(name, args)
+                except Exception as exc:
+                    result = f"工具执行出错: {exc}"
                 if key is not None and not result.startswith("工具执行出错"):
                     dedup[key] = result
                 log_event(

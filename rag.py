@@ -19,9 +19,12 @@ import numpy as np
 from dotenv import load_dotenv
 from openai import OpenAI
 
+from governance import atomic_write_json, env_positive_float, locked_path
+
 load_dotenv(override=True)
 
 EMBED_MODEL = os.getenv("EMBED_MODEL", "text-embedding-v4")
+MODEL_TIMEOUT_SECONDS = env_positive_float("AGENT_MODEL_TIMEOUT_SECONDS", 30.0)
 DASHSCOPE_BASE_URL = os.getenv(
     "DASHSCOPE_BASE_URL",
     "https://dashscope.aliyuncs.com/compatible-mode/v1",
@@ -47,7 +50,11 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
     """批量把文本转成向量。单条时也走批量,减少 API 往返。"""
     if not texts:
         return []
-    resp = _client().embeddings.create(model=EMBED_MODEL, input=texts)
+    resp = _client().embeddings.create(
+        model=EMBED_MODEL,
+        input=texts,
+        timeout=MODEL_TIMEOUT_SECONDS,
+    )
     # resp.data 的顺序与输入一致,但保险起见按 index 排序。
     ordered = sorted(resp.data, key=lambda d: d.index)
     return [d.embedding for d in ordered]
@@ -63,21 +70,29 @@ class VectorStore:
     def __init__(self, path: str):
         self.path = Path(path)
         self.items: list[dict] = []  # [{"id", "text", "vector"}]
+        self._pending: list[dict] = []
         self._load()
 
     def _load(self):
-        if self.path.exists():
-            self.items = json.loads(self.path.read_text(encoding="utf-8"))
+        with locked_path(self.path):
+            if self.path.exists():
+                self.items = json.loads(self.path.read_text(encoding="utf-8"))
 
     def save(self):
-        self.path.parent.mkdir(parents=True, exist_ok=True)
-        self.path.write_text(
-            json.dumps(self.items, ensure_ascii=False),
-            encoding="utf-8",
-        )
+        with locked_path(self.path):
+            disk_items = []
+            if self.path.exists():
+                disk_items = json.loads(self.path.read_text(encoding="utf-8"))
+            known_ids = {item["id"] for item in disk_items}
+            disk_items.extend(item for item in self._pending if item["id"] not in known_ids)
+            atomic_write_json(self.path, disk_items)
+            self.items = disk_items
+            self._pending.clear()
 
     def add(self, text: str, vector: list[float]):
-        self.items.append({"id": uuid.uuid4().hex, "text": text, "vector": vector})
+        item = {"id": uuid.uuid4().hex, "text": text, "vector": vector}
+        self.items.append(item)
+        self._pending.append(item)
 
     def _scores(self, query: list[float]) -> list[tuple[float, int]]:
         q = np.asarray(query, dtype=float)
